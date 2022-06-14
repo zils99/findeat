@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500&family=Moul&display=swap');
+
+/* * {
+    border: 1px solid red;
+} */
+
+body {
+    background-color: #EEEDDE;
+}
+
+body {
+    font-family: 'Lora', serif;
+}
+
+.bg-table {
+    background-color: #FFFEE9;
+}
+
+.header-1 {
+    font-weight: bolder;
+    font-family: 'Moul', cursive;
+}
+
+.row {
+    max-width: 100% !important;
+}
+
+.column {
+    padding: 0px !important;
+}
+
+
+/* navbar */
+.navbar {
+    background-color: #203239;
+}
+
+.navbar-brand {
+    font-family: 'Moul', cursive;
+    color: #E0DDAA;
+    font-size: x-large;
+}
+
+.navbar-brand:hover {
+    color: #fff;
+}
+
+.dropdown-user {
+    font-family: 'Lora', serif;
+}
+.dropdown-toggle:focus {
+    box-shadow: none;
+}
+.fa-bars {
+    color: #fff;
+}
+.space-blank {
+    width: 10vw;
+}
+
+
+/* media query (responsive) screen < 600px */
+@media only screen and (max-width: 600px) {
+    .text-col {
+        padding-top: 20px;
+    }
+
+    .form-control-dark {
+        width: 100% !important;
+    }
+
+    .form-search {
+        width: 100%;
+    }
+}
+
+/* media query (responsive) screen < 1000px */
+@media only screen and (max-width: 1000px) {
+    .form-search {
+        width: 100% !important;
+    }
+}

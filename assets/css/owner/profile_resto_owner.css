@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500&family=Moul&display=swap');
+
+/* * {
+    border: 1px solid red;
+} */
+
+body {
+    background-color: #EEEDDE;
+}
+
+body {
+    font-family: 'Lora', serif;
+}
+
+.bg-table {
+    background-color: #FFFEE9;
+}
+
+.header-1 {
+    font-weight: bolder;
+    font-family: 'Moul', cursive;
+}
+
+.row {
+    max-width: 100% !important;
+}
+
+.column {
+    padding: 0px !important;
+}
+
+/* navbar */
+.nav-bg {
+    background-color: #203239;
+    color: white;
+}
+
+.nav-color-light {
+    color: white !important;
+}
+
+.navbar-brand {
+    font-size: x-large !important;
+    font-family: 'Moul', cursive;
+    color: #E0DDAA !important;
+}
+
+.navbar .navbar-toggler {
+  top: .25rem;
+  right: 1rem;
+}
+
+/* sidebar */
+.sidebar-bg {
+    background-color: #C4C4C4;
+}
+
+.sidebar-bg a {
+    color: #141E27;
+}
+
+.sidebar-bg .active {
+    font-weight: bolder;
+}
+
+/* image preview setting */
+.preview-menus {
+    width: 100%;
+    border: 1px solid #ddd;
+    min-height: 180px;
+    /* display: flex; */
+    padding: 5px 5px 0px 5px;
+    position: relative;
+    overflow:auto;
+}
+.preview-menus > .preview-image {
+    height: 120px;
+    width: 90px;
+    position: relative;
+    margin-right: 5px;
+    float: left;
+    margin-bottom: 5px;
+}
+.preview-menus > .preview-image > .image-zone {
+    width: 100%;
+    height: 100%;
+}
+.preview-menus > .preview-image > .image-zone > img {
+    width: 100%;
+    height: 100%;
+}
+.preview-menus > .preview-image > .tools-edit-image {
+    position: absolute;
+    z-index: 100;
+    color: #fff;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+    display: none;
+}
+.preview-menus > .preview-image > .image-cancel {
+    font-size: 18px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-weight: bold;
+    margin-right: 10px;
+    cursor: pointer;
+    display: none;
+    z-index: 100;
+}
+.preview-image:hover > .image-zone {
+    cursor: move;
+    opacity: .5;
+}
+.preview-image:hover > .tools-edit-image,
+.preview-image:hover > .image-cancel {
+    display: block;
+}
+.ui-sortable-helper {
+    width: 90px !important;
+    height: 90px !important;
+}
+
+/* media query (responsive) screen < 600px */
+@media only screen and (max-width: 600px) {
+    .text-col {
+        padding-top: 20px;
+    }
+
+    .form-control-dark {
+        width: 100% !important;
+    }
+}

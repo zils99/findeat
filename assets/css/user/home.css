@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500&family=Moul&display=swap');
+
+body {
+    background-color: #EEEDDE;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+/* Navbar Setting */
+.navbar {
+    background-color: #203239;
+}
+
+.navbar-brand {
+    font-family: 'Moul', cursive;
+    color: #E0DDAA;
+    font-size: x-large;
+}
+
+.navbar-brand:hover {
+    color: #fff;
+}
+
+.dropdown-user {
+    font-family: 'Lora', serif;
+}
+.dropdown-toggle:focus {
+    box-shadow: none;
+}
+.fa-bars {
+    color: #fff;
+}
+/* .space-blank {
+    width: 10vw;
+} */
+
+/* Banner Section Setting */
+.banner {
+    height: 40vh;
+    background: url(../user/Banner.png) no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.container-banner {
+    height: 40vh;
+}
+
+.text-title {
+    font-family: 'Moul', cursive;
+}
+
+.form-search,
+.btn-search {
+    font-family: 'Lora', serif;
+}
+
+.btn-search {
+    background-color: #21833D;
+    color: #fff;
+}
+
+/* Collection Section Setting */
+.secondary-title {
+    font-family: 'Moul', cursive;
+}
+
+.subtitle,
+.more-collection {
+    font-family: 'Lora', serif;
+}
+
+.more-collection a {
+    color: #21833D;
+}
+
+.card {
+    border-radius: 18px;
+}
+
+/* Localities Section Setting */
+.link-title a {
+    color: #21833D;
+}
+.title-item-collection {
+    font-family: 'Moul', cursive;
+    color: #fff;
+    /* -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black; */
+}

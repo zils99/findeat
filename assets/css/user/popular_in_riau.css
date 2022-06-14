@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500&family=Moul&display=swap');
+
+body {
+    background-color: #EEEDDE;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+/* Navbar Setting */
+.navbar {
+    background-color: #203239;
+}
+
+.navbar-brand {
+    font-family: 'Moul', cursive;
+    color: #E0DDAA;
+    font-size: x-large;
+}
+
+.navbar-brand:hover {
+    color: #fff;
+}
+
+.dropdown-user {
+    font-family: 'Lora', serif;
+}
+.dropdown-toggle:focus {
+    box-shadow: none;
+}
+.fa-bars {
+    color: #fff;
+}
+.space-blank {
+    width: 10vw;
+}
+
+
+
+/* title-popular */
+.title-popular h1, .popular-item h3 {
+    font-family: 'Moul', cursive;
+}
+p {
+    font-family: 'Lora', serif;
+}
+
+/* popular-item */
+.location-item {
+    margin-bottom: 2px;
+}
+.card-img-top {
+    border-radius: 10px;
+    height: 30vh;
+    width: auto;
+    overflow: hidden;
+}
+.card {
+    background-color: #EEEDDE;
+    border: none;
+    border-radius: 10px;
+}
+.card:hover {
+    background-color: #fff;
+}
+.popular-item h3 {
+    color: #000;
+}
+

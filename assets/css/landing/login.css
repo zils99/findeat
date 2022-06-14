@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500&family=Moul&display=swap');
+
+/* * {
+    border: 1px solid red;
+} */
+
+body {
+    background-color: #EEEDDE;
+}
+
+body {
+    font-family: 'Lora', serif;
+}
+
+.row {
+    max-width: 100% !important;
+}
+
+.column {
+    padding: 0px !important;
+}
+
+/* navbar */
+.nav-bg {
+    background-color: #203239;
+    color: white;
+}
+
+.nav-color-light {
+    color: white !important;
+}
+
+.navbar-brand {
+    font-size: x-large !important;
+    font-family: 'Moul', cursive;
+    color: #E0DDAA !important;
+}
+
+.navbar .navbar-toggler {
+  top: .25rem;
+  right: 1rem;
+}
+
+/* media query (responsive) screen < 600px */
+@media only screen and (max-width: 600px) {
+    .text-col {
+        padding-top: 20px;
+    }
+
+    .login-img {
+        display: none;
+        visibility: hidden;
+    }
+}

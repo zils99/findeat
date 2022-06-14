@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500&family=Moul&display=swap');
+
+/* * {
+    border: 1px solid red;
+} */
+
+body {
+    background-color: #EEEDDE;
+}
+
+body {
+    font-family: 'Lora', serif;
+}
+
+.bg-table {
+    background-color: #FFFEE9;
+}
+
+.header-1 {
+    font-weight: bolder;
+    font-family: 'Moul', cursive;
+}
+
+.row {
+    max-width: 100% !important;
+}
+
+.column {
+    padding: 0px !important;
+}
+
+/* navbar */
+.nav-bg {
+    background-color: #203239;
+    color: white;
+}
+
+.nav-color-light {
+    color: white !important;
+}
+
+.navbar-brand {
+    font-size: x-large !important;
+    font-family: 'Moul', cursive;
+    color: #E0DDAA !important;
+}
+
+.navbar .navbar-toggler {
+  top: .25rem;
+  right: 1rem;
+}
+
+/* sidebar */
+.sidebar-bg {
+    background-color: #C4C4C4;
+}
+
+.sidebar-bg a {
+    color: #141E27;
+}
+
+.sidebar-bg .active {
+    font-weight: bolder;
+}
