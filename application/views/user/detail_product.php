@@ -19,28 +19,21 @@
     <nav class="navbar navbar-expand-md">
       <div class="container">
         <a class="navbar-brand" href="#">FindEat!</a>
+        <a class="navbar-brand" href="<?= base_url('User/home'); ?>">FindEat!</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <!-- <span class="navbar-toggler-icon"></span> -->
           <i class="fa-solid fa-bars"></i>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
-            <!-- <li class="nav-item">
-                <form class="d-flex">
-                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" size="70">
-                  <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
-              </li>
-              <li class="nav-item space-blank"></li> -->
             <li class="nav-item">
               <div class="dropdown dropdown-user">
                 <button class="btn dropdown-toggle text-white" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                  <i class="fa-solid fa-user"></i> &ensp;User
+                  <i class="fa-solid fa-user"></i> &ensp;<?= $user['user_nama']; ?>
                 </button>
                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton1">
                   <li>
-                    <a class="dropdown-item" href="#">Log Out</a>
+                    <a class="dropdown-item" href="<?= base_url('Landing/logout') ?>">Log Out</a>
                   </li>
                 </ul>
               </div>
