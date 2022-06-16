@@ -57,4 +57,11 @@ class m_restaurant extends CI_model
         $this->db->where('lokasi_tempat =', $nama);
         return $this->db->get()->result();
     }
+
+    function getrestaurantname($restaurant)
+    {
+        $this->db->where('restaurant_name =', $restaurant);
+        $query = $this->db->get('menu');
+        return $this->db->get()->result();
+    }
 }

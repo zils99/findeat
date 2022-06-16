@@ -63,7 +63,7 @@
             <div class="card">
               <img src="<?= base_url('assets/'); ?>/img/restaurant/<?= $rs->restaurant_gambar ?>" class="card-img-top">
               <div class="card-body">
-                <a href="#1" class="stretched-link">
+                <a href="<?= base_url('User/detailproduct/') ?><?= $rs->restaurant_name ?>" class="stretched-link">
                   <h3><?= $rs->restaurant_name ?></h3>
                 </a>
                 <p class="location-item"><i class="fa-solid fa-location-dot"></i><?= $rs->lokasi_tempat ?></p>

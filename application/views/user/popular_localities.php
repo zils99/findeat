@@ -75,7 +75,7 @@
                                             <?= $lc->lokasi_tempat ?>
                                             <i class="fa-solid fa-angle-right"></i>
                                         </div>
-                                        <a href="<?= base_url('User/hasillocalities/') ?><?= $lc->lokasi_tempat ?> " class="stretched-link"></a>
+                                        <a href="<?= base_url('User/hasillocalities/') ?><?= $lc->lokasi_tempat ?>" class="stretched-link"></a>
                                     </div>
                                 </div>
                             </div>
