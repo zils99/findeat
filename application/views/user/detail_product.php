@@ -9,7 +9,7 @@
   <!-- CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="assets/css/detail_product.css" />
+  <link rel="stylesheet" href="<?= base_url('assets/'); ?>css/user/detail_product.css" />
 
   <title>Detail Product</title>
 </head>
@@ -46,19 +46,18 @@
     <div class="container">
       <div class="row align-items-center">
         <div class="col-md-5">
-          <img src="assets/img/detail_item.png" alt="" width="80%">
+          <img src="<?= base_url('assets/'); ?>/img/restaurant/<?= $restaurant['restaurant_gambar']; ?>" alt="" width="80%">
         </div>
         <div class="col-md-7">
           <div class="description py-auto">
-            <h1>Ramen Ya!</h1>
-            <p><span><i class="fa-solid fa-location-dot"></i></span> Paris Van Java Mall, Sukajadi</p>
-            <p><span><i class="fa-solid fa-clock"></i></span> 10 am - 10 pm</p>
-            <p><span><i class="fa-solid fa-money-bill"></i></span> Rp.100.000 - 200.000</p>
+            <h1><?= $restaurant['restaurant_name']; ?></h1>
+            <p><span><i class="fa-solid fa-location-dot"></i></span> <?= $restaurant['restaurant_address']; ?></p>
+            <p><span><i class="fa-solid fa-clock"></i></span> <?= $restaurant['restaurant_jamoperasional']; ?></p>
+            <p><span><i class="fa-solid fa-money-bill"></i></span> <?= $restaurant['restaurant_harga']; ?></p>
           </div>
           <div class="button-product mt-5">
-            <button type="button" class="btn review btn-lg">Add Review</button>
-
-            <button type="button" class="btn direction btn-lg">Direction</button>
+            <a href="#"><button type="button" class="btn review btn-lg">Add Review</button></a>
+            <button type="button" class="btn reservation btn-lg"><i class="fa-solid fa-phone-flip"></i> Reservation</button>
           </div>
         </div>
       </div>
@@ -70,9 +69,9 @@
       <div class="row">
         <div class="col-md-5">
           <h2 class="title2 mt-4">Menu</h2>
-          <img src="assets/img/menu1.png" alt="">
+          <img src="<?= base_url('assets/'); ?>/img/menu/<?= $menu['menu_gambar']; ?>" style="width: 15rem; height: 20rem;  alt="">
           <br>
-          <a class="all-menu" href="#">See all menus >> </a>
+          <a class=" all-menu" href="#">See all menus >> </a>
         </div>
         <div class="col-md-7">
           <h2 class="title2 mt-4">Review</h2>
@@ -87,7 +86,6 @@
               <tr>
                 <table class="mt-3" style="width:100%">
                   <tr>
-                    <th rowspan="2" style="width: 90px;"><img class="rounded-circle" src="assets/img/profile-review.jpg" alt="" width="70%"></th>
                     <td style="width: 50px;">
                       <div class="rating rating-user"><i class="fa-solid fa-star"></i> 5</div>
                     </td>
@@ -101,9 +99,6 @@
               <tr>
                 <table class="mt-3" style="width:100%">
                   <tr>
-                    <th rowspan="2" style="width: 90px;">
-                      <div class="profile-option"></div>
-                    </th>
                     <td style="width: 50px;">
                       <div class="rating rating-user"><i class="fa-solid fa-star"></i> 4</div>
                     </td>

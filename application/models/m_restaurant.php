@@ -60,8 +60,9 @@ class m_restaurant extends CI_model
 
     function getrestaurantname($restaurant)
     {
-        $this->db->where('restaurant_name =', $restaurant);
-        $query = $this->db->get('menu');
-        return $this->db->get()->result();
+        $this->db->select('*');
+        $this->db->from('restaurant');
+        $this->db->where('restaurant_id =', $restaurant);
+        return $this->db->get()->row_array();
     }
 }

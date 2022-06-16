@@ -42,12 +42,13 @@ class User extends CI_Controller
         $this->load->view('user/hasilsearch', $data);
     }
 
-    public function detailproduct($nama)
+    public function detailproduct($id)
     {
         $data['user'] = $this->db->get_where('user', ['user_email' => $this->session->userdata('user_email')])->row_array();
-        $data['restaurant'] = $this->m_restaurant->getrestaurantname($nama);
-        var_dump($data['restaurant']);
-        die;
-        // $this->load->view('user/hasilsearch', $data);
+        $data['restaurant'] = $this->m_restaurant->getrestaurantname($id);
+        $data['menu'] = $this->m_menu->getfirstmenu($id);
+        // var_dump($data['menu']);
+        // die;
+        $this->load->view('user/detail_product', $data);
     }
 }

@@ -15,4 +15,14 @@ class m_menu extends CI_model
     {
         $this->db->insert('menu', $data);
     }
+
+    function getfirstmenu($id)
+    {
+        $this->db->select('menu_gambar');
+        $this->db->from('menu');
+        $this->db->join('restaurant', 'menu.restaurant_name = restaurant.restaurant_name');
+        $this->db->where('restaurant_id = ', $id);
+        $this->db->limit(1);
+        return $this->db->get()->row_array();
+    }
 }

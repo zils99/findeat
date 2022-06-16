@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500&family=Moul&display=swap');
+
+body {
+    background-color: #EEEDDE;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+/* Navbar Setting */
+.navbar {
+    background-color: #203239;
+}
+
+.navbar-brand {
+    font-family: 'Moul', cursive;
+    color: #E0DDAA;
+    font-size: x-large;
+}
+
+.navbar-brand:hover {
+    color: #fff;
+}
+
+.dropdown-user {
+    font-family: 'Lora', serif;
+}
+.dropdown-toggle:focus {
+    box-shadow: none;
+}
+.fa-bars {
+    color: #fff;
+}
+/* .space-blank {
+    width: 10vw;
+} */
+
+/* Detail Item */
+.description h1, .title2, .profile-name {
+    font-family: 'Moul', cursive;
+}
+.description p, .button-product {
+    font-family: 'Lora', serif;
+}
+
+.button-product .btn {
+    border-radius: 10px;
+}
+.button-product .review {
+    background-color: #F44336;
+    
+}
+.button-product .reservation {
+    background-color: #E0DDAA;
+}
+/* Menu Review */
+.rating {
+    background-color: #E0DDAA;
+    border: 1px solid #000;
+    border-radius: 10px;
+}
+.rating-user {
+    background-color: #36F482;
+}
+.profile-option {
+    background-color: grey;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+}
+.all-menu {
+    color: #000;
+}
+.all-menu:hover {
+    color: #000;
+}
