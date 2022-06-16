@@ -18,7 +18,6 @@
   <section class="sec-navbar">
     <nav class="navbar navbar-expand-md">
       <div class="container">
-        <a class="navbar-brand" href="#">FindEat!</a>
         <a class="navbar-brand" href="<?= base_url('User/home'); ?>">FindEat!</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <i class="fa-solid fa-bars"></i>
