@@ -47,8 +47,13 @@ class User extends CI_Controller
         $data['user'] = $this->db->get_where('user', ['user_email' => $this->session->userdata('user_email')])->row_array();
         $data['restaurant'] = $this->m_restaurant->getrestaurantname($id);
         $data['menu'] = $this->m_menu->getfirstmenu($id);
-        // var_dump($data['menu']);
-        // die;
         $this->load->view('user/detail_product', $data);
+    }
+
+    public function seemenu($id)
+    {
+        $data['user'] = $this->db->get_where('user', ['user_email' => $this->session->userdata('user_email')])->row_array();
+        $data['menu'] = $this->m_menu->getallmenu($id);
+        $this->load->view('user/menu', $data);
     }
 }

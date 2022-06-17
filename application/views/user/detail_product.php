@@ -71,9 +71,9 @@
           <h2 class="title2 mt-4">Menu</h2>
           <img src="<?= base_url('assets/'); ?>/img/menu/<?= $menu['menu_gambar']; ?>" style="width: 15rem; height: 20rem;  alt="">
           <br>
-          <a class=" all-menu" href="#">See all menus >> </a>
+          <a class=" all-menu" href="<?= base_url('User/seemenu/') ?><?= $restaurant['restaurant_id'] ?>">See all menus >> </a>
         </div>
-        <div class="col-md-7">
+        <div class=" col-md-7">
           <h2 class="title2 mt-4">Review</h2>
           <p>Have you ever try this restaurant? Give you experiance here!</p>
           <button type="button" class="btn rating"><i class="fa-solid fa-star"></i> 1</button>
