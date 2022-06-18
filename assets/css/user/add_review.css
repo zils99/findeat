@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500&family=Moul&display=swap');
+
+body {
+    background-color: #EEEDDE;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+/* Navbar Setting */
+.navbar {
+    background-color: #203239;
+}
+
+.navbar-brand {
+    font-family: 'Moul', cursive;
+    color: #E0DDAA;
+    font-size: x-large;
+}
+
+.navbar-brand:hover {
+    color: #fff;
+}
+
+.dropdown-user {
+    font-family: 'Lora', serif;
+}
+.dropdown-toggle:focus {
+    box-shadow: none;
+}
+.fa-bars {
+    color: #fff;
+}
+.space-blank {
+    width: 10vw;
+}
+
+/* public */
+h1, h2 {
+    font-family: 'Moul', cursive;
+}
+p, button, textarea {
+    font-family: 'Lora', serif;
+}
+
+/*  */
+
+/* rating */
+.rating {
+    background-color: #E0DDAA;
+    border: 1px solid #000;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.24);
+    -webkit-box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.24);
+    -moz-box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.24);
+}
+.rating:hover{
+    background-color: #b8b58d;
+}
+
+/* review */
+.review-section textarea {
+    background-color: #FFFEE9;
+}
+.btn-cancel {
+    background-color: #F36D60;
+    width: 14vw;
+    height: 53px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.24);
+    -webkit-box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.24);
+    -moz-box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.24);
+}
+.btn-cancel:hover {
+    background-color: #c95a50;
+}
+.btn-submit {
+    background-color: #589F68;
+    width: 20vw;
+    height: 53px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.24);
+    -webkit-box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.24);
+    -moz-box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.24);
+}
+.btn-submit:hover {
+    background-color: #498457;
+}

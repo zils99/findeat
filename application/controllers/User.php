@@ -56,4 +56,17 @@ class User extends CI_Controller
         $data['menu'] = $this->m_menu->getallmenu($id);
         $this->load->view('user/menu', $data);
     }
+
+    public function review($id)
+    {
+        $data['user'] = $this->db->get_where('user', ['user_email' => $this->session->userdata('user_email')])->row_array();
+        $data['restaurant'] = $this->m_restaurant->getrestaurantname($id);
+        $this->load->view('user/add_review', $data);
+    }
+
+    public function reservasi()
+    {
+        $data['user'] = $this->db->get_where('user', ['user_email' => $this->session->userdata('user_email')])->row_array();
+        $this->load->view('user/reservasi', $data);
+    }
 }

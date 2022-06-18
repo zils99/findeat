@@ -56,8 +56,8 @@
             <p><span><i class="fa-solid fa-money-bill"></i></span> <?= $restaurant['restaurant_harga']; ?></p>
           </div>
           <div class="button-product mt-5">
-            <a href="#"><button type="button" class="btn review btn-lg">Add Review</button></a>
-            <button type="button" class="btn reservation btn-lg"><i class="fa-solid fa-phone-flip"></i> Reservation</button>
+            <a href="<?= base_url('User/review/') ?><?= $restaurant['restaurant_id'] ?>"><button type="button" class="btn review btn-lg">Add Review</button></a>
+            <a href="<?= base_url('User/reservasi/') ?>"><button type="button" class="btn reservation btn-lg"><i class="fa-solid fa-phone-flip"></i> Reservation</button></a>
           </div>
         </div>
       </div>
