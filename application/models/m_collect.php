@@ -10,6 +10,14 @@ class m_collect extends CI_model
         return $this->db->get()->result();
     }
 
+    function getlimitcollection()
+    {
+        $this->db->select('*');
+        $this->db->from('collection');
+        $this->db->limit(4);
+        return $this->db->get()->result();
+    }
+
     function getcountcollection($collection)
     {
         $this->db->where('collection_tipe =', $collection);
@@ -24,5 +32,13 @@ class m_collect extends CI_model
     function tambahcollection($data)
     {
         $this->db->insert('collection', $data);
+    }
+
+    public function getcollection($nama)
+    {
+        $this->db->select('*');
+        $this->db->from('collection');
+        $this->db->where('collection_id =', $nama);
+        return $this->db->get()->result();
     }
 }

@@ -55,36 +55,36 @@
         <div class="container" style="height: 100%;">
             <div class="row">
                 <div class="col-md-12 col-lg-4">
-                    <img src="assets/img/detail_item.png" alt="" width="100%">
+                    <img src="<?= base_url('assets/'); ?>/img/restaurant/<?= $restaurant['restaurant_gambar']; ?>" alt="" width="100%">
                     <div class="description mt-3">
-                        <h1>Ramen Ya!</h1>
-                        <p><span><i class="fa-solid fa-location-dot"></i></span> Paris Van Java Mall, Sukajadi</p>
-                        <p><span><i class="fa-solid fa-clock"></i></span> 10 am - 10 pm</p>
-                        <p><span><i class="fa-solid fa-money-bill"></i></span> Rp.100.000 - 200.000</p>
+                        <h1><?= $restaurant['restaurant_name']; ?></h1>
+                        <p><span><i class="fa-solid fa-location-dot"></i></span> <?= $restaurant['restaurant_address']; ?></p>
+                        <p><span><i class="fa-solid fa-clock"></i></span> <?= $restaurant['restaurant_jamoperasional']; ?></p>
+                        <p><span><i class="fa-solid fa-money-bill"></i></span> <?= $restaurant['restaurant_harga']; ?></p>
                     </div>
                 </div>
                 <div class="col-md-12 col-lg-1"></div>
                 <div class="col-md-12 col-lg-7">
                     <div class="reservation-section">
                         <h2 class="title2">RESERVATION</h2>
-                        <form action="" class="mt-4">
+                        <form method="post" action="<?= base_url('User/addreservasi/'); ?>">
                             <div class="form-group row mb-3">
                                 <label for="inputTanggal" class="col-sm-2 col-form-label">Tanggal</label>
                                 <div class="col-sm-6">
-                                    <input type="date" class="form-control" id="inputTanggal">
+                                    <input type="date" class="form-control" id="inputTanggal" name="tanggal">
                                 </div>
                             </div>
                             <div class="form-group row mb-3">
                                 <label for="inputName" class="col-sm-2 col-form-label">Name</label>
                                 <div class="col-sm-6">
-                                    <input type="text" class="form-control" id="inputName" placeholder="Name">
+                                    <input type="text" class="form-control" id="inputName" placeholder="Name" value="<?= $user['user_nama'] ?>" name="nama">
                                 </div>
                             </div>
                             <div class="form-group row mb-5">
                                 <label for="inputSeat" class="col-sm-2 col-form-label">Seat</label>
                                 <div class="col-3">
                                     <!-- initial value 1 -->
-                                    <input type="number" class="form-control" id="inputSeat" placeholder="0" min="1" value="1">
+                                    <input type="number" class="form-control" id="inputSeat" placeholder="0" min="1" value="1" name="seat">
                                 </div>
                                 Orang
                             </div>

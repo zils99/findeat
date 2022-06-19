@@ -50,11 +50,19 @@ class m_restaurant extends CI_model
         return $this->db->get('restaurant')->row();
     }
 
-    public function getrestaurant($nama)
+    public function getrestaurantlokasi($nama)
     {
         $this->db->select('*');
         $this->db->from('restaurant');
         $this->db->where('lokasi_tempat =', $nama);
+        return $this->db->get()->result();
+    }
+
+    public function getrestaurantcollection($nama)
+    {
+        $this->db->select('*');
+        $this->db->from('restaurant');
+        $this->db->where('collection_tipe =', $nama);
         return $this->db->get()->result();
     }
 
@@ -64,5 +72,13 @@ class m_restaurant extends CI_model
         $this->db->from('restaurant');
         $this->db->where('restaurant_id =', $restaurant);
         return $this->db->get()->row_array();
+    }
+
+    public function getrestaurantsearch($nama)
+    {
+        $this->db->select('*');
+        $this->db->from('restaurant');
+        $this->db->like('restaurant_name', $nama);
+        return $this->db->get()->result();
     }
 }

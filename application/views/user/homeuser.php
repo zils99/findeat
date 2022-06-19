@@ -69,14 +69,14 @@
         <div class="col-8 subtitle">
           <p>Explore many restaurant in Bandung</p>
         </div>
-        <div class="col-4 text-end more-collection"><a href="#">See all collection</a></div>
+        <div class="col-4 text-end more-collection"><a href="<?= base_url('User/seecollection') ?>">See all collection</a></div>
       </div>
       <div class="row">
         <?php foreach ($collections as $cl) : ?>
           <div class="col-6 col-lg-3 mt-4">
             <div class="card" style="background-color: #203239; height: 20vh; background-size: cover;">
               <div class="card-body colection-item d-flex align-items-center">
-                <a href="#" class="stretched-link mt-4">
+                <a href="<?= base_url('User/hasilcollection/') ?><?= $cl->collection_nama ?>" class="stretched-link mt-4">
                   <div class="container">
                     <h5 class="title-item-collection"><?= $cl->collection_nama ?></h5>
                   </div>
