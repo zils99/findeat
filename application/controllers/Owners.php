@@ -11,6 +11,7 @@ class Owners extends CI_Controller
         $this->load->model('m_menu');
         $this->load->model('m_lokasi');
         $this->load->model('m_collect');
+        $this->load->model('m_reservasi');
         $this->load->model('m_restaurant');
         loginsession();
     }
@@ -69,7 +70,6 @@ class Owners extends CI_Controller
                 echo $this->upload->display_errors();
             } else {
                 $file = $this->upload->data();
-                //mengambil data di form
                 $data['restaurant_update'] = [
                     'restaurant_gambar' => $file['file_name']
                 ];
@@ -83,8 +83,6 @@ class Owners extends CI_Controller
     {
         $restaurant = $this->db->get_where('restaurant', ['user_email' => $this->session->userdata('user_email')])->row_array();
         $data['menu'] = $this->m_menu->getmenu($restaurant['restaurant_name']);
-        // var_dump(($data['menu']));
-        // die;
         $this->load->view('owner/temp_topbar');
         $this->load->view('owner/temp_sidebar', $data);
         $this->load->view('owner/menu_resto', $data);
@@ -107,7 +105,6 @@ class Owners extends CI_Controller
                 echo $this->upload->display_errors();
             } else {
                 $file = $this->upload->data();
-                //mengambil data di form
                 $data['menu'] = [
                     'menu_gambar' => $file['file_name'],
                     'restaurant_name' => $restaurant['restaurant_name']
@@ -117,5 +114,35 @@ class Owners extends CI_Controller
             $this->m_menu->tambahmenu($data['menu']);
             redirect('Owners/listmenu');
         }
+    }
+
+    public function reservasi()
+    {
+        if ($this->input->post('selected_button')) {
+            $selected_button = $this->input->post('selected_button');
+            echo ($selected_button);
+        } else {
+            $restaurant = $this->db->get_where('restaurant', ['user_email' => $this->session->userdata('user_email')])->row_array();
+            $data['reservasi'] = $this->m_reservasi->getreservasi($restaurant['restaurant_name']);
+            $this->load->view('owner/reservasi_owner', $data);
+        }
+    }
+
+    public function reservasireject($id)
+    {
+        $data = [
+            'reservasi_status' => 'Reject'
+        ];
+        $this->m_reservasi->updatereservasi($id, $data);
+        redirect('Owners/reservasi');
+    }
+
+    public function reservasiacc($id)
+    {
+        $data = [
+            'reservasi_status' => 'Accept'
+        ];
+        $this->m_reservasi->updatereservasi($id, $data);
+        redirect('Owners/reservasi');
     }
 }

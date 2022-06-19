@@ -89,12 +89,14 @@ class User extends CI_Controller
         $this->load->view('user/reservasi', $data);
     }
 
-    public function addreservasi()
+    public function addreservasi($restaurant)
     {
         $data = [
             'reservasi_tanggal' => $this->input->post('tanggal'),
             'reservasi_username' =>  $this->input->post('nama'),
-            'reservasi_seat' => $this->input->post('seat')
+            'reservasi_seat' => $this->input->post('seat'),
+            'reservasi_restaurant' => $restaurant,
+            'reservasi_status' => "Waiting"
         ];
         $this->m_reservasi->tambahreservasi($data);
         redirect('user/home');

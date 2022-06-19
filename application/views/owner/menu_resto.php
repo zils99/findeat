@@ -7,7 +7,6 @@
                 <div class="mb-4">
                     <button class="btn btn-primary" id="addButton" data-toggle="modal" data-target="addMenuImageModal">Add</button>
                 </div>
-
                 <div class="table-responsive">
                     <table class="table bg-white table-sm">
                         <thead>

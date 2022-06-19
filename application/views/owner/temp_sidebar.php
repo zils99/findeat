@@ -9,7 +9,7 @@
                         <h4>Restaurant</h4>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="<?= base_url('Owners/home') ?>">
+                        <a class="nav-link" aria-current="page" href="<?= base_url('Owners/home') ?>">
                             <span data-feather="home"></span>
                             <i class="fa-solid fa-shop"></i>
                             Profile Resto
@@ -30,7 +30,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url('Owners/home') ?>">
+                        <a class="nav-link" href="<?= base_url('Owners/reservasi') ?>">
                             <span data-feather="shopping-cart"></span>
                             <i class="fa-solid fa-calendar-check"></i>
                             Reservasi
