@@ -18,15 +18,16 @@
   <section class="sec-navbar">
     <nav class="navbar navbar-expand-md">
       <div class="container">
-        <a class="navbar-brand" href="<?= base_url('User/home'); ?>">FindEat!</a>
+        <a class="navbar-brand" href="<?= base_url('User/home') ?>">FindEat!</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <i class="fa-solid fa-bars"></i>
         </button>
+
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Search for Restaurant" aria-label="Search" size="70">
+              <form method="post" action="<?= base_url('User/home'); ?>" class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Search for Restaurant" aria-label="Search" size="70" name="cari">
                 <button class="btn btn-light" type="submit">Search</button>
               </form>
             </li>
@@ -34,11 +35,11 @@
             <li class="nav-item">
               <div class="dropdown dropdown-user">
                 <button class="btn dropdown-toggle text-white" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                  <i class="fa-solid fa-user"></i> &ensp;User
+                  <i class="fa-solid fa-user"></i> &ensp;<?= $user['user_nama']; ?>
                 </button>
                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton1">
                   <li>
-                    <a class="dropdown-item" href="#">Log Out</a>
+                    <a class="dropdown-item" href="<?= base_url('Landing/logout') ?>">Log Out</a>
                   </li>
                 </ul>
               </div>
@@ -62,27 +63,46 @@
         </div>
         <div class="col-md-12 col-lg-1"></div>
         <div class="col-md-12 col-lg-7">
-          <div class="rating-section">
-            <h2 class="title2">Rating</h2>
-            <p>how good is the restaurant? Give your rating here!</p>
-            <button type="button" class="btn rating"><i class="fa-solid fa-star"></i> 1</button>
-            <button type="button" class="btn rating"><i class="fa-solid fa-star"></i> 2</button>
-            <button type="button" class="btn rating"><i class="fa-solid fa-star"></i> 3</button>
-            <button type="button" class="btn rating"><i class="fa-solid fa-star"></i> 4</button>
-            <button type="button" class="btn rating"><i class="fa-solid fa-star"></i> 5</button>
-          </div>
-          <div class="review-section">
-            <h2 class="title2 mt-5">Review</h2>
-            <p>Please give your review if it's need!</p>
-            <form action="">
-              <textarea name="comment-review" id="comment-review" cols="65" rows="10"></textarea>
+          <form method="post" action="<?= base_url('User/addreview/'); ?><?= $restaurant['restaurant_id']; ?>">
+            <div class="rating-section">
+              <h2 class="title2">Rating</h2>
+              <p>how good is the restaurant? Give your rating here!</p>
+              <div class="form-rating">
+                <group class="inline-radio">
+                  <div class="rating">
+                    <input type="radio" name="rating-value" value="1">
+                    <label><i class="fa-solid fa-star"></i> 1</label>
+                  </div>
+                  <div class="rating">
+                    <input type="radio" name="rating-value" value="2">
+                    <label><i class="fa-solid fa-star"></i> 2</label>
+                  </div>
+                  <div class="rating">
+                    <input type="radio" name="rating-value" value="3">
+                    <label><i class="fa-solid fa-star"></i> 3</label>
+                  </div>
+                  <div class="rating">
+                    <input type="radio" name="rating-value" value="4">
+                    <label><i class="fa-solid fa-star"></i> 4</label>
+                  </div>
+                  <div class="rating">
+                    <input type="radio" name="rating-value" value="5">
+                    <label><i class="fa-solid fa-star"></i> 5</label>
+                  </div>
+                </group>
+              </div>
+            </div>
+            <div class="review-section">
+              <h2 class="title2 mt-5">Review</h2>
+              <p>Please give your review if it's need!</p>
+              <textarea name="comment" id="comment-review" cols="65" rows="10"></textarea>
               <br><br>
-              <button type="button" class="btn btn-cancel">Cancel</button>
+              <button type="cancel" class="btn btn-cancel">Cancel</button>
               <button type="submit" class="btn btn-submit">Submit Review</button>
-            </form>
-          </div>
+          </form>
         </div>
       </div>
+    </div>
     </div>
   </section>
 

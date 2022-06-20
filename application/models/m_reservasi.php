@@ -21,4 +21,14 @@ class m_reservasi extends CI_model
         $this->db->where('reservasi_id =', $where);
         $this->db->update('reservasi', $data);
     }
+
+    function getcountallreservasi()
+    {
+        $query = $this->db->get('reservasi');
+        if ($query->num_rows() > 0) {
+            return $query->num_rows();
+        } else {
+            return 0;
+        }
+    }
 }

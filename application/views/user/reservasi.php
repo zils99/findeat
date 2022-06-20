@@ -67,7 +67,7 @@
                 <div class="col-md-12 col-lg-7">
                     <div class="reservation-section">
                         <h2 class="title2">RESERVATION</h2>
-                        <form method="post" action="<?= base_url('User/addreservasi/'); ?><?= $restaurant['restaurant_name']; ?>">
+                        <form method="post" action="<?= base_url('User/addreservasi/'); ?><?= $restaurant['restaurant_id']; ?>">
                             <div class="form-group row mb-3">
                                 <label for="inputTanggal" class="col-sm-2 col-form-label">Tanggal</label>
                                 <div class="col-sm-6">

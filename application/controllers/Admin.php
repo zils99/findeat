@@ -11,6 +11,7 @@ class Admin extends CI_Controller
         $this->load->model('m_restaurant');
         $this->load->model('m_lokasi');
         $this->load->model('m_collect');
+        $this->load->model('m_reservasi');
         loginsession();
     }
 
@@ -19,6 +20,7 @@ class Admin extends CI_Controller
         $data['user'] = $this->db->get_where('user', ['user_email' => $this->session->userdata('user_email')])->row_array();
         $data['restaurant'] = $this->m_restaurant->getallrestaurant();
         $data['jmlrestaurant'] = $this->m_restaurant->getcountallrestaurant();
+        $data['jmlreservasi'] = $this->m_reservasi->getcountallreservasi();
         foreach ($data['restaurant'] as $jr) :
             $total = $this->m_restaurant->getcountrestaurantmenu($jr->restaurant_name);
             $field[] = (object)[
@@ -41,6 +43,7 @@ class Admin extends CI_Controller
         $data['user'] = $this->db->get_where('user', ['user_email' => $this->session->userdata('user_email')])->row_array();
         $data['listuser'] = $this->m_user->getalluser('user');
         $data['jmlrestaurant'] = $this->m_restaurant->getcountallrestaurant();
+        $data['jmlreservasi'] = $this->m_reservasi->getcountallreservasi();
         $this->load->view('admin/temp_topbar');
         $this->load->view('admin/temp_sidebar', $data);
         $this->load->view('admin/listuser', $data);
@@ -54,6 +57,7 @@ class Admin extends CI_Controller
         foreach ($data['listlokasi'] as $ls) :
             $total = $this->m_lokasi->getcountrestaurant($ls->lokasi_tempat);
             $field[] = (object)[
+                'id' => $ls->lokasi_id,
                 'lokasi' => $ls->lokasi_tempat,
                 'total' => $total
             ];
@@ -75,6 +79,16 @@ class Admin extends CI_Controller
         redirect('admin/listlokasi');
     }
 
+    public function editlokasi($id)
+    {
+        $nama = $this->input->post('nama');
+        $data = [
+            'lokasi_tempat' => $nama
+        ];
+        $this->m_lokasi->editlokasi($id, $data);
+        redirect('admin/listlokasi');
+    }
+
     public function listcollection()
     {
         $data['user'] = $this->db->get_where('user', ['user_email' => $this->session->userdata('user_email')])->row_array();
@@ -82,6 +96,7 @@ class Admin extends CI_Controller
         foreach ($data['listcollect'] as $lc) :
             $total = $this->m_collect->getcountcollection($lc->collection_nama);
             $field[] = (object)[
+                'id' => $lc->collection_id,
                 'collect' => $lc->collection_nama,
                 'total' => $total
             ];
@@ -100,6 +115,16 @@ class Admin extends CI_Controller
             'collection_nama' => $nama
         ];
         $this->m_collect->tambahcollection($data);
+        redirect('admin/listcollection');
+    }
+
+    public function editcollection($id)
+    {
+        $nama = $this->input->post('nama');
+        $data = [
+            'collection_nama' => $nama
+        ];
+        $this->m_collect->editcollection($id, $data);
         redirect('admin/listcollection');
     }
 }

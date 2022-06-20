@@ -18,13 +18,43 @@
                                 <th scope="col">Action</th>
                             </tr>
                         </thead>
-                        <?php foreach ($listlokasi as $rs) : ?>
+                        <?php $i = 1;
+                        foreach ($listlokasi as $rs) : ?>
                             <tbody>
                                 <tr>
                                     <td><?= $rs->lokasi ?></td>
                                     <td><?= $rs->total ?></td>
                                     <td>
-                                        <button class="btn btn-warning">Edit</button>
+                                        <!-- Button trigger modal -->
+                                        <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#editModal<?= $i ?>">
+                                            <!-- kaya yang tadi 1 nya di ganti -->
+                                            Edit
+                                        </button>
+
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="editModal<?= $i ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <!-- kaya yang tadi 1 nya di ganti -->
+                                            <div class="modal-dialog modal-dialog-centered">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalLabel">Edit <?= $rs->lokasi ?></h5>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+                                                    <form method="post" action="<?= base_url('Admin/editlokasi/'); ?><?= $rs->id ?>">
+                                                        <div class="modal-body">
+                                                            <div class="form-group">
+                                                                <label for="recipient-edit-name" class="col-form-label">Collection Name:</label>
+                                                                <input type="text" class="form-control" id="recipient-edit-name" value="<?= $rs->lokasi ?> " name="nama">
+                                                            </div>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                            <button type="submit" class="btn btn-primary">Submit</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </td>
                                 </tr>
                             </tbody>

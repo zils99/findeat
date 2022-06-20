@@ -41,4 +41,10 @@ class m_collect extends CI_model
         $this->db->where('collection_id =', $nama);
         return $this->db->get()->result();
     }
+
+    public function editcollection($where, $data)
+    {
+        $this->db->where('collection_id =', $where);
+        $this->db->update('collection', $data);
+    }
 }

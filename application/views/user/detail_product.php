@@ -76,39 +76,23 @@
         <div class=" col-md-7">
           <h2 class="title2 mt-4">Review</h2>
           <p>Have you ever try this restaurant? Give you experiance here!</p>
-          <button type="button" class="btn rating"><i class="fa-solid fa-star"></i> 1</button>
-          <button type="button" class="btn rating"><i class="fa-solid fa-star"></i> 2</button>
-          <button type="button" class="btn rating"><i class="fa-solid fa-star"></i> 3</button>
-          <button type="button" class="btn rating"><i class="fa-solid fa-star"></i> 4</button>
-          <button type="button" class="btn rating"><i class="fa-solid fa-star"></i> 5</button>
           <div class="review-user mt-4">
             <table>
-              <tr>
-                <table class="mt-3" style="width:100%">
-                  <tr>
-                    <td style="width: 50px;">
-                      <div class="rating rating-user"><i class="fa-solid fa-star"></i> 5</div>
-                    </td>
-                    <td class="profile-name">mitawikantari</td>
-                  </tr>
-                  <tr>
-                    <td colspan="2">Suka banget sama ramennya! pelayanannya juga ramah</td>
-                  </tr>
-                </table>
-              </tr>
-              <tr>
-                <table class="mt-3" style="width:100%">
-                  <tr>
-                    <td style="width: 50px;">
-                      <div class="rating rating-user"><i class="fa-solid fa-star"></i> 4</div>
-                    </td>
-                    <td class="profile-name">cikacarissa</td>
-                  </tr>
-                  <tr>
-                    <td colspan="2">enak banget, harganya juga murah.</td>
-                  </tr>
-                </table>
-              </tr>
+              <?php foreach ($review as $rv) : ?>
+                <tr>
+                  <table class="mt-3" style="width:100%">
+                    <tr>
+                      <td style="width: 50px;">
+                        <div class="rating rating-user"><i class="fa-solid fa-star"></i><?= $rv->review_rating ?></div>
+                      </td>
+                      <td class="profile-name"><?= $rv->review_name ?></td>
+                    </tr>
+                    <tr>
+                      <td colspan="2"><?= $rv->review_comment ?></td>
+                    </tr>
+                  </table>
+                </tr>
+              <?php endforeach ?>
             </table>
 
           </div>

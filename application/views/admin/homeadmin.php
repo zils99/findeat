@@ -25,7 +25,7 @@
                             <i style="font-size: 200%;" class="fa-solid fa-utensils"></i>
                         </div>
                         <div class="col">
-                            <b>46</b><br>
+                            <b><?= $jmlreservasi; ?></b><br>
                             Total Reservation
                         </div>
                     </div>

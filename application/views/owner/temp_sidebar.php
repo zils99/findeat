@@ -23,7 +23,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url('Owners/home') ?>">
+                        <a class="nav-link" href="<?= base_url('Owners/perfoma') ?>">
                             <span data-feather="file"></span>
                             <i class="fa-solid fa-chart-simple"></i>
                             Performa Resto

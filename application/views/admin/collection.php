@@ -2,7 +2,7 @@
             <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4" style="height: 100vh;">
 
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2">
-                    <h3>Lokasi</h5>
+                    <h3>Collection</h5>
                 </div>
 
                 <div class="mb-4">
@@ -18,16 +18,47 @@
                                 <th scope="col">Action</th>
                             </tr>
                         </thead>
-                        <?php foreach ($listcollect as $rs) : ?>
+                        <?php $i = 1;
+                        foreach ($listcollect as $rs) : ?>
                             <tbody>
                                 <tr>
                                     <td><?= $rs->collect ?></td>
                                     <td><?= $rs->total ?></td>
                                     <td>
-                                        <button class="btn btn-warning">Edit</button>
+                                        <!-- Button trigger modal -->
+                                        <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#editModal<?= $i ?>">
+                                            <!-- kaya yang tadi 1 nya di ganti -->
+                                            Edit
+                                        </button>
+
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="editModal<?= $i ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <!-- kaya yang tadi 1 nya di ganti -->
+                                            <div class="modal-dialog modal-dialog-centered">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalLabel">Edit <?= $rs->collect ?></h5>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+                                                    <form method="post" action="<?= base_url('Admin/editcollection/'); ?><?= $rs->id ?>">
+                                                        <div class="modal-body">
+                                                            <div class="form-group">
+                                                                <label for="recipient-edit-name" class="col-form-label">Collection Name:</label>
+                                                                <input type="text" class="form-control" id="recipient-edit-name" value="<?= $rs->collect ?> " name="nama">
+                                                            </div>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                            <button type="submit" class="btn btn-primary">Submit</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </td>
                                 </tr>
                             </tbody>
+                            <?php $i++; ?>
                         <?php endforeach ?>
                     </table>
                 </div>
@@ -62,6 +93,7 @@
 
             <!-- javascript -->
             <script>
+                // add collection
                 var modalAddCollection = function(callback) {
 
                     $("#addButton").on("click", function() {

@@ -46,13 +46,15 @@
       <h1>Menu</h1>
       <br>
       <div class="row text-center">
-        <?php foreach ($menu as $mn) : ?>
+        <?php
+        $i = 1;
+        foreach ($menu as $mn) : ?>
           <div class="col-md-6 col-lg-4 mb-5">
-            <a href="#" data-bs-toggle="modal" data-bs-target="#staticBackdrop1">
+            <a href="#" data-bs-toggle="modal" data-bs-target="#staticBackdrop<?= $i; ?>">
               <img src="<?= base_url('assets/'); ?>/img/menu/<?= $mn['menu_gambar'] ?>" alt="" />
             </a>
             <!-- Modal -->
-            <div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal fade" id="staticBackdrop<?= $i ?>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
               <div class="modal-dialog modal-dialog-scrollable">
                 <div class="modal-content">
                   <div class="modal-header">
@@ -65,6 +67,7 @@
               </div>
             </div>
           </div>
+          <?php $i++; ?>
         <?php endforeach ?>
       </div>
     </div>

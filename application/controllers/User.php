@@ -9,6 +9,7 @@ class User extends CI_Controller
         $this->load->library('form_validation');
         $this->load->model('m_menu');
         $this->load->model('m_user');
+        $this->load->model('m_review');
         $this->load->model('m_lokasi');
         $this->load->model('m_collect');
         $this->load->model('m_reservasi');
@@ -65,6 +66,7 @@ class User extends CI_Controller
         $data['user'] = $this->db->get_where('user', ['user_email' => $this->session->userdata('user_email')])->row_array();
         $data['restaurant'] = $this->m_restaurant->getrestaurantname($id);
         $data['menu'] = $this->m_menu->getfirstmenu($id);
+        $data['review'] = $this->m_review->getreview($id);
         $this->load->view('user/detail_product', $data);
     }
 
@@ -82,6 +84,20 @@ class User extends CI_Controller
         $this->load->view('user/add_review', $data);
     }
 
+    public function addreview($id)
+    {
+        $user = $this->db->get_where('user', ['user_email' => $this->session->userdata('user_email')])->row_array();
+        $restaurant = $this->m_restaurant->getrestaurantname($id);
+        $data = [
+            'review_rating' => $this->input->post('rating-value'),
+            'review_name' => $user['user_nama'],
+            'review_restaurant' => $restaurant['restaurant_name'],
+            'review_comment' => $this->input->post('comment')
+        ];
+        $this->m_review->tambahreview($data);
+        redirect('user/home');
+    }
+
     public function reservasi($id)
     {
         $data['user'] = $this->db->get_where('user', ['user_email' => $this->session->userdata('user_email')])->row_array();
@@ -89,13 +105,14 @@ class User extends CI_Controller
         $this->load->view('user/reservasi', $data);
     }
 
-    public function addreservasi($restaurant)
+    public function addreservasi($id)
     {
+        $restaurant = $this->m_restaurant->getrestaurantname($id);
         $data = [
             'reservasi_tanggal' => $this->input->post('tanggal'),
             'reservasi_username' =>  $this->input->post('nama'),
             'reservasi_seat' => $this->input->post('seat'),
-            'reservasi_restaurant' => $restaurant,
+            'reservasi_restaurant' => $restaurant['restaurant_name'],
             'reservasi_status' => "Waiting"
         ];
         $this->m_reservasi->tambahreservasi($data);

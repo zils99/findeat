@@ -26,4 +26,10 @@ class m_lokasi extends CI_model
     {
         $this->db->insert('lokasi', $data);
     }
+
+    public function editlokasi($where, $data)
+    {
+        $this->db->where('lokasi_id =', $where);
+        $this->db->update('lokasi', $data);
+    }
 }

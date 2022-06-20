@@ -9,6 +9,7 @@ class Owners extends CI_Controller
         $this->load->library('form_validation');
         $this->load->model('m_user');
         $this->load->model('m_menu');
+        $this->load->model('m_review');
         $this->load->model('m_lokasi');
         $this->load->model('m_collect');
         $this->load->model('m_reservasi');
@@ -144,5 +145,15 @@ class Owners extends CI_Controller
         ];
         $this->m_reservasi->updatereservasi($id, $data);
         redirect('Owners/reservasi');
+    }
+
+    public function perfoma()
+    {
+        $restaurant = $this->db->get_where('restaurant', ['user_email' => $this->session->userdata('user_email')])->row_array();
+        $data['review'] = $this->m_review->getallreview($restaurant['restaurant_name']);
+        $this->load->view('owner/temp_topbar');
+        $this->load->view('owner/temp_sidebar');
+        $this->load->view('owner/performa_resto_owner', $data);
+        $this->load->view('owner/temp_footer');
     }
 }

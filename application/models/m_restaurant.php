@@ -13,7 +13,6 @@ class m_restaurant extends CI_model
         $this->db->select('*');
         $this->db->from('user');
         $this->db->join('restaurant', 'user.user_email = restaurant.user_email');
-        $this->db->join('menu', 'restaurant.restaurant_name = menu.restaurant_name');
         return $this->db->get()->result();
     }
 
