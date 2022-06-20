@@ -3,7 +3,11 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
+<<<<<<< HEAD
 -- Generation Time: Jun 20, 2022 at 01:54 PM
+=======
+-- Generation Time: Jun 20, 2022 at 07:56 AM
+>>>>>>> e4e205853dedf4768f0b1ce007d530d400a21613
 -- Server version: 10.1.29-MariaDB
 -- PHP Version: 7.2.0
 
@@ -38,7 +42,10 @@ CREATE TABLE `collection` (
 --
 
 INSERT INTO `collection` (`collection_id`, `collection_nama`) VALUES
+<<<<<<< HEAD
 (4, 'indonesia'),
+=======
+>>>>>>> e4e205853dedf4768f0b1ce007d530d400a21613
 (2, 'kopi'),
 (1, 'ramen'),
 (3, 'western');
@@ -107,9 +114,13 @@ CREATE TABLE `reservasi` (
 --
 
 INSERT INTO `reservasi` (`reservasi_id`, `reservasi_tanggal`, `reservasi_username`, `reservasi_seat`, `reservasi_status`, `reservasi_restaurant`) VALUES
+<<<<<<< HEAD
 (10, '2022-06-01', 'pembeli1', 2, 'Waiting', 'Ramen Ya!'),
 (11, '2022-06-20', 'pembeli1', 2, 'Reject', 'Ramen Ya!'),
 (13, '2022-06-20', 'pembeli1', 2, 'Accept', 'Ramen Ya!');
+=======
+(2, '2022-06-01', 'pembeli1', 2, 'Waiting', 'Ramen Ya!');
+>>>>>>> e4e205853dedf4768f0b1ce007d530d400a21613
 
 -- --------------------------------------------------------
 
@@ -134,7 +145,11 @@ CREATE TABLE `restaurant` (
 --
 
 INSERT INTO `restaurant` (`restaurant_id`, `restaurant_name`, `restaurant_address`, `restaurant_jamoperasional`, `restaurant_harga`, `user_email`, `lokasi_tempat`, `collection_tipe`, `restaurant_gambar`) VALUES
+<<<<<<< HEAD
 (3, 'Ramen Ya!', 'Paris Van Java, Blok H-21', '10.00 - 23.00', 'Rp 100.000 - Rp 200.000', 'penjual1@gmail.com', 'braga', 'ramen', 'test.png');
+=======
+(3, 'Ramen Ya!', 'Paris Van Java, Blok H-21', '10.00 - 23.00', 'Rp 100.000 - Rp 200.000', 'penjual1@gmail.com', 'braga', 'ramen', 'detail_item.png');
+>>>>>>> e4e205853dedf4768f0b1ce007d530d400a21613
 
 -- --------------------------------------------------------
 
@@ -150,6 +165,7 @@ CREATE TABLE `review` (
   `review_comment` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+<<<<<<< HEAD
 --
 -- Dumping data for table `review`
 --
@@ -158,6 +174,8 @@ INSERT INTO `review` (`review_id`, `review_rating`, `review_name`, `review_resta
 (2, 4, 'pembeli1', 'Ramen Ya!', 'Makanannya enak disini'),
 (3, 5, 'pembeli1', 'Ramen Ya!', 'makannya murah');
 
+=======
+>>>>>>> e4e205853dedf4768f0b1ce007d530d400a21613
 -- --------------------------------------------------------
 
 --
@@ -181,8 +199,12 @@ CREATE TABLE `user` (
 INSERT INTO `user` (`user_id`, `user_nama`, `user_password`, `user_email`, `user_joindate`, `user_gambar`, `user_role`) VALUES
 (1, 'penjual1', '$2y$10$3hllfjS6esg72yYv0HF6bu62LF9xtiyafqbVPe7Uf.lOrFI7Oc3eW', 'penjual1@gmail.com', '2022-05-30', '', 'owner'),
 (4, 'admin', '$2y$10$iIy3B/EihRlqMd.yhH3OLeCFNNgQN0zrbmVDp6.iyGqurQ0eT9.Ey', 'admin@gmail.com', '2022-05-30', '', 'admin'),
+<<<<<<< HEAD
 (5, 'pembeli1', '$2y$10$fNyBTlEgs5.4x0Tot04cJOGZ5yaDmwQUXg/nIqNwYoF2LjYhVRnOy', 'pembeli1@gmail.com', '2022-05-31', '', 'pengguna'),
 (6, 'penjual2', '$2y$10$0mrkeIb4OSi.HKr2L8qga.G8QuX1kD8FqHU7ga0blPAP/fXNOuqFO', 'penjual2@gmail.com', '2022-06-20', '', 'admin');
+=======
+(5, 'pembeli1', '$2y$10$fNyBTlEgs5.4x0Tot04cJOGZ5yaDmwQUXg/nIqNwYoF2LjYhVRnOy', 'pembeli1@gmail.com', '2022-05-31', '', 'pengguna');
+>>>>>>> e4e205853dedf4768f0b1ce007d530d400a21613
 
 --
 -- Indexes for dumped tables
@@ -214,7 +236,12 @@ ALTER TABLE `menu`
 --
 ALTER TABLE `reservasi`
   ADD PRIMARY KEY (`reservasi_id`),
+<<<<<<< HEAD
   ADD KEY `reservasi_restaurant` (`reservasi_restaurant`) USING BTREE;
+=======
+  ADD UNIQUE KEY `reservasi_restaurant` (`reservasi_restaurant`),
+  ADD KEY `reservasi_username` (`reservasi_username`);
+>>>>>>> e4e205853dedf4768f0b1ce007d530d400a21613
 
 --
 -- Indexes for table `restaurant`
@@ -250,7 +277,11 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `collection`
 --
 ALTER TABLE `collection`
+<<<<<<< HEAD
   MODIFY `collection_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+=======
+  MODIFY `collection_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+>>>>>>> e4e205853dedf4768f0b1ce007d530d400a21613
 
 --
 -- AUTO_INCREMENT for table `lokasi`
@@ -268,7 +299,11 @@ ALTER TABLE `menu`
 -- AUTO_INCREMENT for table `reservasi`
 --
 ALTER TABLE `reservasi`
+<<<<<<< HEAD
   MODIFY `reservasi_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+=======
+  MODIFY `reservasi_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+>>>>>>> e4e205853dedf4768f0b1ce007d530d400a21613
 
 --
 -- AUTO_INCREMENT for table `restaurant`
@@ -280,13 +315,21 @@ ALTER TABLE `restaurant`
 -- AUTO_INCREMENT for table `review`
 --
 ALTER TABLE `review`
+<<<<<<< HEAD
   MODIFY `review_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+=======
+  MODIFY `review_id` int(11) NOT NULL AUTO_INCREMENT;
+>>>>>>> e4e205853dedf4768f0b1ce007d530d400a21613
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
+<<<<<<< HEAD
   MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+=======
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+>>>>>>> e4e205853dedf4768f0b1ce007d530d400a21613
 
 --
 -- Constraints for dumped tables
@@ -296,28 +339,48 @@ ALTER TABLE `user`
 -- Constraints for table `menu`
 --
 ALTER TABLE `menu`
+<<<<<<< HEAD
   ADD CONSTRAINT `menu_ibfk_1` FOREIGN KEY (`restaurant_name`) REFERENCES `restaurant` (`restaurant_name`) ON DELETE CASCADE ON UPDATE CASCADE;
+=======
+  ADD CONSTRAINT `menu_ibfk_1` FOREIGN KEY (`restaurant_name`) REFERENCES `restaurant` (`restaurant_name`);
+>>>>>>> e4e205853dedf4768f0b1ce007d530d400a21613
 
 --
 -- Constraints for table `reservasi`
 --
 ALTER TABLE `reservasi`
+<<<<<<< HEAD
   ADD CONSTRAINT `reservasi_ibfk_1` FOREIGN KEY (`reservasi_restaurant`) REFERENCES `restaurant` (`restaurant_name`) ON DELETE CASCADE ON UPDATE CASCADE;
+=======
+  ADD CONSTRAINT `reservasi_ibfk_1` FOREIGN KEY (`reservasi_restaurant`) REFERENCES `restaurant` (`restaurant_name`),
+  ADD CONSTRAINT `reservasi_ibfk_2` FOREIGN KEY (`reservasi_username`) REFERENCES `user` (`user_nama`);
+>>>>>>> e4e205853dedf4768f0b1ce007d530d400a21613
 
 --
 -- Constraints for table `restaurant`
 --
 ALTER TABLE `restaurant`
+<<<<<<< HEAD
   ADD CONSTRAINT `restaurant_ibfk_1` FOREIGN KEY (`user_email`) REFERENCES `user` (`user_email`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `restaurant_ibfk_2` FOREIGN KEY (`lokasi_tempat`) REFERENCES `lokasi` (`lokasi_tempat`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `restaurant_ibfk_3` FOREIGN KEY (`collection_tipe`) REFERENCES `collection` (`collection_nama`) ON DELETE CASCADE ON UPDATE CASCADE;
+=======
+  ADD CONSTRAINT `restaurant_ibfk_1` FOREIGN KEY (`user_email`) REFERENCES `user` (`user_email`),
+  ADD CONSTRAINT `restaurant_ibfk_2` FOREIGN KEY (`lokasi_tempat`) REFERENCES `lokasi` (`lokasi_tempat`),
+  ADD CONSTRAINT `restaurant_ibfk_3` FOREIGN KEY (`collection_tipe`) REFERENCES `collection` (`collection_nama`);
+>>>>>>> e4e205853dedf4768f0b1ce007d530d400a21613
 
 --
 -- Constraints for table `review`
 --
 ALTER TABLE `review`
+<<<<<<< HEAD
   ADD CONSTRAINT `review_ibfk_1` FOREIGN KEY (`review_restaurant`) REFERENCES `restaurant` (`restaurant_name`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `review_ibfk_2` FOREIGN KEY (`review_name`) REFERENCES `user` (`user_nama`) ON DELETE CASCADE ON UPDATE CASCADE;
+=======
+  ADD CONSTRAINT `review_ibfk_1` FOREIGN KEY (`review_restaurant`) REFERENCES `restaurant` (`restaurant_name`),
+  ADD CONSTRAINT `review_ibfk_2` FOREIGN KEY (`review_name`) REFERENCES `user` (`user_nama`);
+>>>>>>> e4e205853dedf4768f0b1ce007d530d400a21613
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
