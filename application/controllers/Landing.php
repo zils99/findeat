@@ -121,7 +121,10 @@ class Landing extends CI_Controller
 			$data_restaurant = [
 				'restaurant_name' => htmlspecialchars($this->input->post('name_restaurant', true)),
 				'restaurant_address' => htmlspecialchars($this->input->post('address_restaurant', true)),
-				'user_email' => htmlspecialchars($this->input->post('email_owner', true))
+				'user_email' => htmlspecialchars($this->input->post('email_owner', true)),
+				'collection_tipe' => 'none',
+				'restaurant_gambar' => 'test.png',
+				'lokasi_tempat' => 'none'
 			];
 
 			$data_owners = [

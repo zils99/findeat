@@ -39,7 +39,8 @@ class Owners extends CI_Controller
                 'restaurant_address' => $this->input->post('alamat'),
                 'restaurant_jamoperasional' => $this->input->post('jam'),
                 'restaurant_harga' => $this->input->post('harga'),
-                'lokasi_tempat' => $this->input->post('collection')
+                'lokasi_tempat' => $this->input->post('collection'),
+                'collection_tipe' => $this->input->post('daerah')
             ];
         } elseif (NULL != $this->input->post('daerah')) {
             $data['restaurant_update'] = [
@@ -47,6 +48,7 @@ class Owners extends CI_Controller
                 'restaurant_address' => $this->input->post('alamat'),
                 'restaurant_jamoperasional' => $this->input->post('jam'),
                 'restaurant_harga' => $this->input->post('harga'),
+                'lokasi_tempat' => $this->input->post('collection'),
                 'collection_tipe' => $this->input->post('daerah')
             ];
         } else {
